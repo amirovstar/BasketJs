@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <style>
+        
+        .product {
+            margin-bottom: 20px;
+        }
+
+        .basket-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .basket-menu.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .basket-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping Website</h1>
+
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product">
+                    <img src="flame-removebg-preview.png" alt="Product 1" style="width: 211px; height: 296px;">
+                    <h2>Eros Flame</h2>
+                    <p>Price: $110.00</p>
+                    <button class="btn btn-primary add-to-cart" onclick="addCart('Eros Flame', 110.00)">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="product">
+                    <img src="eros-removebg-preview.png" alt="Product 2" style="width: 211px; height: 296px;">
+                    <h2>Versace Eros</h2>
+                    <p>Price: $120.00</p>
+                    <button class="btn btn-primary add-to-cart" onclick="addCart('Versace Eros', 120.00)">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product">
+                    <img src="1-million-paco-rabanne-removebg-preview.png" alt="Product 3" style="width: 250px; height: 250px;">
+                    <h2>Paco Rabanne 1-Million</h2>
+                    <p>Price: $130.00</p>
+                    <button class="btn btn-primary add-to-cart" onclick="addCart('Paco Rabanne 1-Million', 130.00)">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product">
+                    <img src="s1855618-main-zoom-removebg-preview.png" alt="Product 4" style="width: 250px; height: 250px;">
+                    <h2>Tom Ford Oud Wood</h2>
+                    <p>Price: $140.00</p>
+                    <button class="btn btn-primary add-to-cart" onclick="addCart('Tom Ford Oud Wood', 140.00)">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="basket-menu" id="basket-menu">
+            <h2>Basket Menu</h2>
+            <p>Items: <span id="cart-count-menu">0</span></p>
+            <p>Total: $<span id="cart-total-menu">0.00</span></p>
+            <div id="cart-items-menu"></div>
+            <button class="btn btn-danger" onclick="removeAllItems()">Remove All</button>
+            <button class="btn btn-secondary" onclick="closeCartMenu()">Close Menu</button>
+        </div>
+
+        <button class="btn btn-primary basket-button" onclick="toggleCartMenu()">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+   <script src="script.js"></script>
+</body>
+</html>
